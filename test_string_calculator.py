@@ -56,3 +56,11 @@ def test_add_negative_numbers():
     with pytest.raises(ValueError) as exc_info:
        add("-1,2,-3")
     assert str(exc_info.value) == "Negative numbers are not allowed: -1, -3"
+
+def test_add_ignore_numbers_greater_than_1000():
+    """
+    Test case: Numbers greater than 1000 should be ignored when calculating the sum.
+    Input: "1,1001,2,3"
+    Expected Output: 6
+    """
+    add("1,1001,2,3") == 6
