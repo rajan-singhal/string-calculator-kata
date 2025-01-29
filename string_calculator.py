@@ -10,14 +10,19 @@ def add(numbers: str) -> int:
 
     numbers_list = numbers.split(",")
     negatives = []
+    numbers_to_add = []
 
     for num in numbers_list:
         number = int(num)
         if number < 0:
             negatives.append(number)
+        elif number > 1000:
+            continue
+        else:
+            numbers_to_add.append(number)
 
     if negatives:
         raise ValueError(
             f"Negative numbers are not allowed: {', '.join(map(str, negatives))}")
 
-    return sum(map(int, numbers_list))
+    return sum(map(int, numbers_to_add))
