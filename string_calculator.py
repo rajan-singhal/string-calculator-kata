@@ -4,6 +4,10 @@ def add(numbers: str) -> int:
     if numbers.startswith("//"):
         delimiter_end_index = numbers.index("\n")
         delimiter = numbers[2:delimiter_end_index]
+
+        if delimiter.startswith("[") and delimiter.endswith("]"):
+            delimiter = delimiter[1:-1]
+
         numbers = numbers[delimiter_end_index + 1:]
         numbers = numbers.replace(delimiter, ",")
     numbers = numbers.replace("\n", ",")
