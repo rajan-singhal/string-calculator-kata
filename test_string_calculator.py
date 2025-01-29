@@ -37,3 +37,12 @@ def test_add_numbers_with_newlines():
     Expected Output: 6
     """
     assert add("1\n2\n3") == 6
+
+
+def test_add_numbers_with_custom_delimiter():
+    """
+    Test case: Adding numbers separated by a custom delimiter should return their sum.
+    Input: "//;\n1;2;3"
+    Expected Output: 6
+    """
+    add("//;\n1;2;3") == 6
