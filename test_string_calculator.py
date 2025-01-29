@@ -47,6 +47,7 @@ def test_add_numbers_with_custom_delimiter():
     """
     add("//;\n1;2;3") == 6
 
+
 def test_add_negative_numbers():
     """
     Test case: Adding numbers with negative numbers should raise an exception.
@@ -54,8 +55,9 @@ def test_add_negative_numbers():
     Expected Output: "Negative numbers are not allowed: -1, -3"
     """
     with pytest.raises(ValueError) as exc_info:
-       add("-1,2,-3")
+        add("-1,2,-3")
     assert str(exc_info.value) == "Negative numbers are not allowed: -1, -3"
+
 
 def test_add_ignore_numbers_greater_than_1000():
     """
@@ -63,4 +65,4 @@ def test_add_ignore_numbers_greater_than_1000():
     Input: "1,1001,2,3"
     Expected Output: 6
     """
-    add("1,1001,2,3") == 6
+    assert add("1,1001,2,3") == 6
