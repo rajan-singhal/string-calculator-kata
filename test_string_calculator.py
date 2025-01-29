@@ -66,3 +66,12 @@ def test_add_ignore_numbers_greater_than_1000():
     Expected Output: 6
     """
     assert add("1,1001,2,3") == 6
+
+
+def test_add_numbers_with_custom_delimiter_any_length(self):
+    """
+    Test case: Adding numbers separated by a custom delimiter with a any length should return their sum.
+    Input: "//[***]\n1***2***3"
+    Expected Output: 6
+    """
+    assert add("//[***]\n1***2***3") == 6
