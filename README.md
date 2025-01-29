@@ -8,7 +8,6 @@ int Add(string numbers)
 
 ———————————————
 
-
 The method can take up to two numbers, separated by commas, and will return their sum. 
 for example “” or “1” or “1,2” as inputs.
 
@@ -21,9 +20,7 @@ Hints:
 ——————
 
  - Start with the simplest test case of an empty string and move to one and two numbers
- - 
- - Remember to solve things as simply as possible so that you force yourself to write tests you did not think about
- - 
+ - Remember to solve things as simply as possible so that you force yourself to write tests you did not think about   
  - Remember to refactor after each passing test
 
 ———————————————————————————————
@@ -65,7 +62,7 @@ Delimiters can be of any length with the following format: “//[delimiter]\n”
 
 ————————————————————————————————
 
-Allow multiple delimiters like this: “//[delim1][delim2]\n” for example “//[*][%]\n1*2%3” should return 6.
+Allow multiple delimiters like this: “//[delim1][delim2]\n” for example “//[\*][%]\n1\*2%3” should return 6.
 
 ————————————————————————————————
 
