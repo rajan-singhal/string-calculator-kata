@@ -15,3 +15,11 @@ def test_add_two_csv_numbers_string():
     Expected Output: 3
     """
 	assert add('1,2') == 3
+
+def test_add_multiple_numbers():
+    """
+    Test case: Adding multiple numbers should return their sum.
+    Input: "1,2,3,4,5"
+    Expected Output: 15
+    """
+    assert add("1,2,3,4,5") == 15
