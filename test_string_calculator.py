@@ -75,3 +75,11 @@ def test_add_numbers_with_custom_delimiter_any_length():
     Expected Output: 6
     """
     assert add("//[***]\n1***2***3") == 6
+
+def test_add_numbers_with_multiple_delimiters():
+    """
+    Test case: Multiple delimiters of any length can be used.
+    Input: "//[***][%%]\n1***2%%3"
+    Expected Output: 6
+    """
+    assert add("//[***][%%]\n1***2%%3") == 6
