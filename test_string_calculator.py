@@ -46,3 +46,13 @@ def test_add_numbers_with_custom_delimiter():
     Expected Output: 6
     """
     add("//;\n1;2;3") == 6
+
+def test_add_negative_numbers():
+    """
+    Test case: Adding numbers with negative numbers should raise an exception.
+    Input: "-1,2,3"
+    Expected Output: "Negative numbers are not allowed: -1"
+    """
+    with pytest.raises(ValueError) as exc_info:
+       add("-1,2,-3")
+    assert str(exc_info.value) == "Negative numbers are not allowed: -1, -3"
