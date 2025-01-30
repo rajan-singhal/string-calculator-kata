@@ -76,6 +76,7 @@ def test_add_numbers_with_custom_delimiter_any_length():
     """
     assert add("//[***]\n1***2***3") == 6
 
+
 def test_add_numbers_with_multiple_delimiters():
     """
     Test case: Multiple delimiters of any length can be used.
@@ -86,3 +87,31 @@ def test_add_numbers_with_multiple_delimiters():
     """
     assert add("//[***][%%]\n1***2%%3") == 6
     assert add('//[*][%]\n1*2%3') == 6
+
+
+def test_add_with_invalid_inputs():
+    """
+    Test case: Invalid inputs.
+    Input: "//;\n1000;1;2;"
+    Expected Output: 
+    should throw the following: - ERROR: invalid input
+
+    Input: "   //;\n1000,1;2"
+    Expected Output: 
+    should throw the following: - ERROR: invalid input
+
+    Input: "1,2,3//;\n1000,1;2"
+    Expected Output: 
+    should throw the following: - ERROR: invalid input
+    """
+    with pytest.raises(ValueError) as exc_info:
+        add("//;\n1000;1;2;")
+    assert str(exc_info.value) == "ERROR: invalid input"
+
+    with pytest.raises(ValueError) as exc_info:
+        add("   //;\n1000,1;2")
+    assert str(exc_info.value) == "ERROR: invalid input"
+
+    with pytest.raises(ValueError) as exc_info:
+        add("1,2,3//;\n1000,1;2")
+    assert str(exc_info.value) == "ERROR: invalid input"
