@@ -22,7 +22,10 @@ def add(numbers: str) -> int:
     numbers_to_add = []
 
     for num in numbers_list:
-        number = int(num)
+        try:
+            number = int(num)
+        except ValueError as v:
+            raise ValueError("ERROR: invalid input")
         if number < 0:
             negatives.append(number)
         elif number > 1000:
